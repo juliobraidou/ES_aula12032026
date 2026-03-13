@@ -1,0 +1,23 @@
+@startuml DUC_04ALUNO_MarcioSoares_CalebeMoraes
+left to right direction
+skinparam packageStyle rectangle
+
+actor Aluno
+
+rectangle "FitPass Gym Management" {
+  usecase "UC01 - Realizar Login" as UC01
+  usecase "UC07 - Realizar Pagamento Online" as UC07
+  usecase "UC09 - Visualizar Horários de Aulas" as UC09
+  usecase "UC10 - Agendar Aula" as UC10
+  usecase "UC11 - Cancelar Agendamento de Aula" as UC11
+  usecase "UC14 - Visualizar Avaliação Física" as UC14
+}
+
+Aluno --> UC01
+Aluno --> UC07
+Aluno --> UC09
+Aluno --> UC10
+Aluno --> UC11
+Aluno --> UC14
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml DUC_03GERENTE_MarcioSoares_CalebeMoraes
+left to right direction
+skinparam packageStyle rectangle
+
+actor Gerente
+
+rectangle "FitPass Gym Management" {
+  usecase "UC01 - Realizar Login" as UC01
+  usecase "UC04 - Cadastrar Plano" as UC04
+  usecase "UC05 - Editar/Desativar Plano" as UC05
+  usecase "UC15 - Emitir Rel. de Inadimplência" as UC15
+  usecase "UC16 - Emitir Rel. de Alunos Ativos" as UC16
+  usecase "UC17 - Emitir Rel. de Hist. de Acessos" as UC17
+  usecase "UC18 - Emitir Rel. de Ocupação das Aulas" as UC18
+}
+
+Gerente --> UC01
+Gerente --> UC04
+Gerente --> UC05
+Gerente --> UC15
+Gerente --> UC16
+Gerente --> UC17
+Gerente --> UC18
+
+@enduml

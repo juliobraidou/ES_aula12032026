@@ -1,0 +1,18 @@
+@startuml DUC_06INTEGRACAO_MarcioSoares_CalebeMoraes
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Sistema de Catraca" as Catraca
+actor "Sistema (Processo Interno)" as SistemaAuto
+
+rectangle "FitPass Gym Management" {
+  usecase "UC08 - Validar Acesso via Catraca" as UC08
+  usecase "UC19 - Enviar Notificação de Vencimento" as UC19
+  usecase "UC20 - Atualizar Status de Regularidade" as UC20
+}
+
+Catraca --> UC08
+SistemaAuto --> UC19
+SistemaAuto --> UC20
+
+@enduml

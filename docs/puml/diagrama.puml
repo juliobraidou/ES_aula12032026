@@ -1,0 +1,81 @@
+@startuml DUC_01_COMPLETO_MarcioSoares_CalebeMoraes
+left to right direction
+skinparam packageStyle rectangle
+
+actor Aluno
+actor Recepcionista
+actor Instrutor
+actor Gerente
+actor "Sistema de Catraca" as Catraca
+actor "Sistema (Processo Interno)" as SistemaAuto
+
+rectangle "FitPass Gym Management" {
+  
+  usecase "UC01 - Realizar Login" as UC01
+  
+  ' Recepcionista
+  usecase "UC02 - Cadastrar Novo Aluno" as UC02
+  usecase "UC03 - Editar Dados do Aluno" as UC03
+  usecase "UC06 - Registrar Pagamento Presencial" as UC06
+  
+  ' Gerente
+  usecase "UC04 - Cadastrar Plano" as UC04
+  usecase "UC05 - Editar/Desativar Plano" as UC05
+  usecase "UC15 - Emitir Rel. de Inadimplência" as UC15
+  usecase "UC16 - Emitir Rel. de Alunos Ativos" as UC16
+  usecase "UC17 - Emitir Rel. de Hist. de Acessos" as UC17
+  usecase "UC18 - Emitir Rel. de Ocupação das Aulas" as UC18
+  
+  ' Aluno
+  usecase "UC07 - Realizar Pagamento Online" as UC07
+  usecase "UC09 - Visualizar Horários de Aulas" as UC09
+  usecase "UC10 - Agendar Aula" as UC10
+  usecase "UC11 - Cancelar Agendamento de Aula" as UC11
+  usecase "UC14 - Visualizar Avaliação Física" as UC14
+  
+  ' Instrutor
+  usecase "UC12 - Registrar Presença em Aula" as UC12
+  usecase "UC13 - Registrar Avaliação Física" as UC13
+  
+  ' Integrações e Sistema Automático
+  usecase "UC08 - Validar Acesso via Catraca" as UC08
+  usecase "UC19 - Enviar Notificação de Vencimento" as UC19
+  usecase "UC20 - Atualizar Status de Regularidade" as UC20
+}
+
+' Relacionamentos Login
+Aluno --> UC01
+Recepcionista --> UC01
+Instrutor --> UC01
+Gerente --> UC01
+
+' Relacionamentos Recepcionista
+Recepcionista --> UC02
+Recepcionista --> UC03
+Recepcionista --> UC06
+
+' Relacionamentos Gerente
+Gerente --> UC04
+Gerente --> UC05
+Gerente --> UC15
+Gerente --> UC16
+Gerente --> UC17
+Gerente --> UC18
+
+' Relacionamentos Aluno
+Aluno --> UC07
+Aluno --> UC09
+Aluno --> UC10
+Aluno --> UC11
+Aluno --> UC14
+
+' Relacionamentos Instrutor
+Instrutor --> UC12
+Instrutor --> UC13
+
+' Relacionamentos Catraca e Sistema
+Catraca --> UC08
+SistemaAuto --> UC19
+SistemaAuto --> UC20
+
+@enduml

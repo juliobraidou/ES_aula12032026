@@ -1,0 +1,17 @@
+@startuml DUC_05INSTRUTOR_MarcioSoares_CalebeMoraes
+left to right direction
+skinparam packageStyle rectangle
+
+actor Instrutor
+
+rectangle "FitPass Gym Management" {
+  usecase "UC01 - Realizar Login" as UC01
+  usecase "UC12 - Registrar Presença em Aula" as UC12
+  usecase "UC13 - Registrar Avaliação Física" as UC13
+}
+
+Instrutor --> UC01
+Instrutor --> UC12
+Instrutor --> UC13
+
+@enduml

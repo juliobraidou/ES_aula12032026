@@ -1,0 +1,19 @@
+@startuml DUC_02RECEPCIONISTA_MarcioSoares_CalebeMoraes
+left to right direction
+skinparam packageStyle rectangle
+
+actor Recepcionista
+
+rectangle "FitPass Gym Management" {
+  usecase "UC01 - Realizar Login" as UC01
+  usecase "UC02 - Cadastrar Novo Aluno" as UC02
+  usecase "UC03 - Editar Dados do Aluno" as UC03
+  usecase "UC06 - Registrar Pagamento Presencial" as UC06
+}
+
+Recepcionista --> UC01
+Recepcionista --> UC02
+Recepcionista --> UC03
+Recepcionista --> UC06
+
+@enduml
